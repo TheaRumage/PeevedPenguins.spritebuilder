@@ -96,6 +96,7 @@
 		E363DBB71B3E05A600AA9AA5 /* Penguin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363DBB61B3E05A600AA9AA5 /* Penguin.swift */; };
 		E363DBBD1B3E05E800AA9AA5 /* Seal.swift in Sources */ = {isa = PBXBuildFile; fileRef = E363DBBC1B3E05E800AA9AA5 /* Seal.swift */; };
 		E38A8E6A1B410F5600A39F7C /* Gameplay.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A8E691B410F5600A39F7C /* Gameplay.swift */; };
+		E38A8E741B41FA0D00A39F7C /* WaitingPenguin.swift in Sources */ = {isa = PBXBuildFile; fileRef = E38A8E731B41FA0D00A39F7C /* WaitingPenguin.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -217,6 +218,7 @@
 		E363DBB61B3E05A600AA9AA5 /* Penguin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Penguin.swift; sourceTree = "<group>"; };
 		E363DBBC1B3E05E800AA9AA5 /* Seal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Seal.swift; sourceTree = "<group>"; };
 		E38A8E691B410F5600A39F7C /* Gameplay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gameplay.swift; sourceTree = "<group>"; };
+		E38A8E731B41FA0D00A39F7C /* WaitingPenguin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaitingPenguin.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -445,6 +447,7 @@
 				7A046D7519E84C36004C4763 /* MainScene.swift */,
 				E363DBB61B3E05A600AA9AA5 /* Penguin.swift */,
 				E363DBBC1B3E05E800AA9AA5 /* Seal.swift */,
+				E38A8E731B41FA0D00A39F7C /* WaitingPenguin.swift */,
 				7A40362019DDEF0D007B6E8F /* Platforms */,
 			);
 			name = Source;
@@ -824,6 +827,7 @@
 				B73789871807631A0076A88C /* main.m in Sources */,
 				E38A8E6A1B410F5600A39F7C /* Gameplay.swift in Sources */,
 				7A046D7919E84ED5004C4763 /* MainScene.swift in Sources */,
+				E38A8E741B41FA0D00A39F7C /* WaitingPenguin.swift in Sources */,
 				E363DBB71B3E05A600AA9AA5 /* Penguin.swift in Sources */,
 				E363DBBD1B3E05E800AA9AA5 /* Seal.swift in Sources */,
 				5B121038197487F2004C1E1D /* AppDelegate.m in Sources */,
