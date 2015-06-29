@@ -21,6 +21,10 @@ class Gameplay: CCNode, CCPhysicsCollisionDelegate
     // Penguin variables
     var currentPenguin: Penguin?
     var penguinCatapultJoint: CCPhysicsJoint?
+    var actionFollow: CCActionFollow?
+    
+    //Checks minimum speed of penguin
+    let minSpeed = CGFloat(5)
     
     // called when CCB file has completed loading
     func didLoadFromCCB()
@@ -124,8 +128,11 @@ class Gameplay: CCNode, CCPhysicsCollisionDelegate
             currentPenguin?.physicsBody.allowsRotation = true
             
             // follow the flying penguin
-            let actionFollow = CCActionFollow(target: currentPenguin, worldBoundary: boundingBox())
+            actionFollow = CCActionFollow(target: currentPenguin, worldBoundary: boundingBox())
             contentNode.runAction(actionFollow)
+            
+            currentPenguin?.launched = true
+            
         }
     }
     
@@ -165,5 +172,45 @@ class Gameplay: CCNode, CCPhysicsCollisionDelegate
         seal.parent.addChild(explosion)
         // finally, remove the seal from the level
         seal.removeFromParent()
+    }
+    
+    override func update(delta: CCTime)
+    {
+        if let currentPenguin = currentPenguin
+        {
+            if currentPenguin.launched
+            {
+        
+                // if speed is below minimum speed, assume this attempt is over
+                if ccpLength(currentPenguin.physicsBody.velocity) < minSpeed
+                {
+                    nextAttempt()
+                    return
+                }
+                
+                let xMin = currentPenguin.boundingBox().origin.x
+                if (xMin < boundingBox().origin.x)
+                {
+                    nextAttempt()
+                    return
+                }
+                
+                let xMax = xMin + currentPenguin.boundingBox().size.width
+                if xMax > (boundingBox().origin.x + boundingBox().size.width)
+                {
+                    nextAttempt()
+                    return
+                }
+            }
+        }
+    }
+    
+    func nextAttempt()
+    {
+        currentPenguin = nil
+        contentNode.stopAction(actionFollow)
+        
+        let actionMoveTo = CCActionMoveTo(duration: 1, position: CGPoint.zeroPoint)
+        contentNode.runAction(actionMoveTo)
     }
 }
